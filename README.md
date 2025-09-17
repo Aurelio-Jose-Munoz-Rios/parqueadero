@@ -1,3 +1,4 @@
 Sistema automatizado para la gestión de un parqueadero vertical, que controla el pago con monedas de 500 y 1000 pesos, visualiza el tiempo de parqueo en un display de 7 segmentos y gestiona la apertura y cierre de puertas. Utiliza alarmas sonoras y visuales (torre de luces) para indicar el estado del sistema, y permite la selección de vehículos a través de un teclado matricial. El sistema también cuenta con funciones de emergencia y seguridad, como la parada de emergencia y control de anomalías, todo gestionado por un microcontrolador y diversos sensores y actuadores.
 
-![IMG_4507](https://github.com/user-attachments/assets/d3291b3a-e65e-4301-8ce3-a537dcbe8e93)
+![IMG_4507](https://github.com/user-attachments/assets/464478ed-e713-4f64-a0ce-7819030b06aa)
+
