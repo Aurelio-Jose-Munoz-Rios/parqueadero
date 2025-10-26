@@ -18,7 +18,7 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
 
 ***
 
-## Gestión de Sensores y Actuadores 
+## Sensores y Actuadores 
 ***
 * **Sensores:**
     * **Referencia Posicional (Homing):** Se utiliza un **Sensor Tracker seguidor de línea** en la base del sistema. Su señal digital se procesa mediante un acondicionador (`button_conditioner`) para generar un pulso limpio que indica al `parking_fsm` que se ha alcanzado la posición "Piso 0", deteniendo el motor (`stepper_control`) con precisión.
