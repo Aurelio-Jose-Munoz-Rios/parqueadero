@@ -27,7 +27,7 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 - **Zumbador (buzzer)**
 
 ### Sensores
-- **2 Sensores infrarrojos TCRT5000 IR
+- **2 Sensores infrarrojos TCRT5000 IR**
 
 ### 🔌 Alimentación y conexión
 - **Fuente de alimentación de 9 V** (para el motor paso a paso)
