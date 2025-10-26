@@ -6,7 +6,7 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 
 ***
 
-## Arquitectura del Sistema 🏗️
+## Arquitectura del Sistema 
 
 El diseño se basa en una **arquitectura estrictamente modular**, dividiendo el sistema en componentes lógicos con responsabilidades claras y bien definidas. Esta estructura facilita la comprensión, el mantenimiento y futuras expansiones.
 
@@ -18,7 +18,7 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
 
 ***
 
-## Gestión de Sensores y Actuadores ⚙️
+## Gestión de Sensores y Actuadores 
 
 La integración y **calibración precisa** de sensores y actuadores garantizan un funcionamiento fiable y exacto:
 
@@ -28,7 +28,7 @@ La integración y **calibración precisa** de sensores y actuadores garantizan u
 
 ***
 
-## Documentación 📚
+## Documentación 
 
 El proyecto está **ampliamente documentado** para facilitar su comprensión y mantenimiento:
 
@@ -37,7 +37,7 @@ El proyecto está **ampliamente documentado** para facilitar su comprensión y m
 
 ***
 
-## Calidad del Código ✨
+## Calidad del Código 
 
 Se ha puesto énfasis en la **calidad, estructura y reutilización** del código VHDL:
 
@@ -47,7 +47,7 @@ Se ha puesto énfasis en la **calidad, estructura y reutilización** del código
 
 ***
 
-## Creatividad, Valor Agregado e Interrelación 💡
+## Creatividad, Valor Agregado e Interrelación 
 
 El proyecto va más allá de los requisitos básicos, incorporando **funcionalidades adicionales** y demostrando una **gestión inteligente de la interacción** entre componentes:
 
@@ -56,7 +56,7 @@ El proyecto va más allá de los requisitos básicos, incorporando **funcionalid
 
 ***
 
-## Identificación de Consecuencias 🤔
+## Identificación de Consecuencias 
 
 Las decisiones clave de diseño se tomaron **analizando sus efectos técnicos y prácticos**:
 
@@ -66,13 +66,13 @@ Las decisiones clave de diseño se tomaron **analizando sus efectos técnicos y 
 
 ***
 
-## Colaboración y Roles 🤝 [Asumido para el ejemplo]
+## Colaboración y Roles 
 
 El desarrollo se realizó de forma colaborativa, aprovechando la estructura modular para **definir roles claros y facilitar el trabajo en paralelo** utilizando un sistema de control de versiones (GitHub). Las contribuciones de cada miembro del equipo están documentadas a través del historial de commits.
 
 ***
 
-## Prototipado y Simulación 💻
+## Prototipado y Simulación 
 
 La **validación funcional** se realizó mediante simulación exhaustiva y pruebas en el prototipo físico:
 
@@ -81,7 +81,7 @@ La **validación funcional** se realizó mediante simulación exhaustiva y prueb
 
 ***
 
-## Análisis de Resultados 📊
+## Análisis de Resultados 
 
 El proyecto valida la viabilidad de implementar sistemas de control embebido complejos **directamente en hardware**, aprovechando el paralelismo inherente de las FPGAs para gestionar múltiples tareas concurrentes (control de motores, temporización, interfaz de usuario) de manera eficiente.
 
@@ -89,7 +89,7 @@ El proyecto valida la viabilidad de implementar sistemas de control embebido com
 
 ***
 
-## Maqueta y Montaje 🛠️
+## Maqueta y Montaje 
 
 Se construyó una **maqueta física funcional, limpia y bien ensamblada** que representa el sistema real:
 
