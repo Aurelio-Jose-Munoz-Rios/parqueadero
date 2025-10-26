@@ -37,7 +37,9 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
 ## Colaboración y Roles 
 
 Aurelio Muñoz: Project Manager y diseño 3D.
+
 Kelly Bunay: Desarrollador de Softaware, componentes modulares, estetica, organización y etiquetado de maqueta.
+
 Brayan Mosquera: Desarrollador de Software, componentes modulares, soldador de headers y medición de cableado.
 ***
 
