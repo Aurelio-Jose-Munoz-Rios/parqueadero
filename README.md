@@ -38,26 +38,26 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
 
 Este proyecto integra varios componentes electrónicos conectados mediante una placa de pruebas (breadboard) y módulos de expansión (breakouts). Incluye control mediante teclado matricial, indicadores LED, sensores y motores.
 
-## 🧩 Componentes de Hardware
+## Componentes de Hardware
 
-### 🔢 Entrada / Interfaz de usuario
+### Entrada / Interfaz de usuario
 - **Teclado matricial 4x4** (16 teclas)
 - **Botón pulsador rojo** (función: emergencia)
 - **Botón pulsador azul** (función: inicio o entrada)
 
-### 💡 Indicadores y señalización
+### Indicadores y señalización
 - **LED rojo**
 - **LED verde**
 - **LED amarillo**
 - **Resistencias limitadoras de corriente** (para los LED, típicamente 220 Ω o 330 Ω)
 
-### ⚙️ Actuadores
+### Actuadores
 - **Motor paso a paso NEMA 17**
 - **Driver A4988** (control del motor paso a paso)
 - **Servomotor SG90 o similar**
 - **Zumbador (buzzer)**
 
-### ⚡ Sensores
+### Sensores
 - **2 Sensores infrarrojos (IR)** tipo módulo seguidor de línea (digitales)
 
 ### 🔌 Alimentación y conexión
@@ -66,10 +66,10 @@ Este proyecto integra varios componentes electrónicos conectados mediante una p
 - **Protoboard (breadboard)**
 - **Cables Dupont** (macho-macho / macho-hembra)
 
-### 🔧 Módulos de expansión
+### Módulos de expansión
 - **Módulos “Breakout” J4 y J5** (expansión de pines para microcontrolador o tarjeta principal)
 
-##Notas
+## Notas
 - Los módulos *J4 y J5* pertenecen a la tarjeta FPGA CYCLON III.
 ---
 
@@ -86,7 +86,7 @@ El siguiente esquema muestra la interconexión de todos los componentes descrito
 
 ---
 
-© 2025 — Proyecto electrónico con control por teclado, sensores y actuadores.
+© 2025 — Parqueadero vertical automático con control por teclado, sensores y actuadores.
 
 
 ## Colaboración y Roles 
@@ -95,7 +95,7 @@ Aurelio Muñoz: Project Manager y diseño 3D.
 
 Kelly Bunay: Desarrollador de Softaware, componentes modulares, estetica, organización y etiquetado de maqueta.
 
-Brayan Mosquera: Desarrollador de Software, componentes modulares, soldador de headers y medición de cableado.
+Brayan Mosquera: Desarrollador de Software, componentes modulares, soldador y conector de cableado.
 ***
 
 ## Maqueta y Montaje 
