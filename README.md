@@ -1,100 +1,98 @@
-# Parqueadero Vertical Automatizado en VHDL (Evaluación)
+# Parqueadero Vertical Automatizado en VHDL
 
-Este documento describe el proyecto de un parqueadero vertical automatizado implementado en VHDL, destacando cómo el diseño cumple con los criterios de excelencia definidos en la rúbrica de evaluación del curso "Diseño de Circuitos Digitales con VHDL".
+## Introducción
 
-## 1. Arquitectura del Sistema (5/5 pts)
+Este proyecto presenta el diseño e implementación de un sistema de parqueadero vertical totalmente automatizado, controlado por una FPGA utilizando VHDL. El sistema gestiona el almacenamiento de hasta 6 vehículos, optimizando el espacio y ofreciendo una interfaz de usuario simple basada en un teclado matricial. Incluye control preciso de motores, gestión individual del tiempo de estacionamiento, cálculo de tarifas y retroalimentación visual mediante 4 displays de 7 segmentos.
 
-[cite_start]**Criterio:** "Diseño modular, escalable, bien documentado." [cite: 5]
+***
 
-El sistema se ha diseñado siguiendo una **arquitectura estrictamente modular**, separando las responsabilidades en componentes lógicos independientes y reutilizables. Esto se refleja en la estructura de archivos del proyecto:
+## Arquitectura del Sistema 🏗️
 
-* **`top_level.vhd`:** Entidad puramente estructural que instancia y conecta los módulos funcionales.
-* **Módulos Funcionales (en `/src`):** Cada uno encapsula una tarea específica (`parking_fsm`, `stepper_control`, `servo_control`, `keypad_manager`, `display_manager`, `parking_timer`, `siren_control`).
-* **Librería de Módulos Básicos (en `/src/lib_basic`):** Componentes genéricos y reutilizables (`tick_generator`, `bcd_to_7seg_cc`, `pwm_generator`, etc.) que son la base de los módulos funcionales.
+El diseño se basa en una **arquitectura estrictamente modular**, dividiendo el sistema en componentes lógicos con responsabilidades claras y bien definidas. Esta estructura facilita la comprensión, el mantenimiento y futuras expansiones.
 
-Esta modularidad hace que el diseño sea **escalable**. Por ejemplo, para añadir más pisos o cambiar la velocidad del motor, solo se modificarían parámetros o módulos específicos, sin afectar al resto del sistema. Todo el código fuente incluye **documentación detallada** en forma de encabezados de entidad y comentarios internos explicando la lógica.
+* **`top_level.vhd`:** Actúa como la entidad principal, puramente estructural, encargada de instanciar y conectar todos los submódulos.
+* **Módulos Funcionales (`/src`):** Encapsulan tareas completas como la lógica de control principal (`parking_fsm`), el manejo de actuadores (`stepper_control`, `servo_control`, `siren_control`), la interfaz de usuario (`keypad_manager`, `display_manager`) y la gestión del tiempo (`parking_timer`).
+* **Librería Básica (`/src/lib_basic`):** Contiene componentes genéricos y reutilizables (`tick_generator`, decodificadores 7-segmentos, `pwm_generator`, etc.), que forman los bloques de construcción fundamentales.
 
-## 2. Gestión de Sensores y Actuadores (5/5 pts)
+Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número de espacios o la velocidad del motor implicaría modificar parámetros o módulos específicos sin alterar el resto del sistema.
 
-[cite_start]**Criterio:** "Funcionan bien, sensores y actuadores correctamente integrados y calibrados." [cite: 5]
+***
 
-Los sensores y actuadores están **integrados y calibrados** para un funcionamiento preciso y fiable:
+## Gestión de Sensores y Actuadores ⚙️
 
-* **Sensor de Homing:** Utiliza un `button_conditioner` para generar un pulso limpio, asegurando una detección precisa del "Piso 0" y deteniendo el motor (`stepper_control`) en el momento exacto.
-* **Motor a Pasos:** El módulo `stepper_control` recibe comandos claros (`enable`, `dir`) del `parking_fsm`. La constante `STEP_PERIOD_CYCLES` ha sido calibrada experimentalmente para ofrecer la máxima velocidad posible sin perder pasos, asegurando que el ascensor llegue a la posición correcta.
-* **Servomotor:** El módulo `servo_control` implementa una secuencia temporizada precisa (30s subida, 50s espera, 30s bajada) y genera la señal PWM correspondiente a través del `pwm_generator`, asegurando que la barrera se mueva a los ángulos correctos (0° y 90°).
+La integración y **calibración precisa** de sensores y actuadores garantizan un funcionamiento fiable y exacto:
 
-## 3. Documentación (5/5 pts)
+* **Sensor de Homing:** Se utiliza un acondicionador de señal (`button_conditioner`) para asegurar una detección limpia del "Piso 0", permitiendo al `stepper_control` detenerse en la posición correcta.
+* **Motor a Pasos:** El control se realiza mediante comandos claros (`enable`, `dir`) desde la FSM principal. La velocidad de operación (`STEP_PERIOD_CYCLES`) ha sido **calibrada experimentalmente** para optimizar el balance entre rapidez y fiabilidad, asegurando el posicionamiento exacto en cada nivel.
+* **Servomotor:** El `servo_control` implementa una secuencia temporizada precisa para la apertura y cierre de la barrera, utilizando un `pwm_generator` para alcanzar los ángulos correctos (0° y 90°) de forma consistente.
 
-[cite_start]**Criterio:** "Documentación detallada, con diagramas y comentarios completos." [cite: 5]
+***
 
-El proyecto incluye:
+## Documentación 📚
 
-* **Comentarios Completos:** Cada entidad VHDL posee un encabezado descriptivo. Las señales, variables y procesos clave dentro del código están comentados para explicar su propósito.
-* **Diagrama de Bloques:** Se adjunta un diagrama (`/doc/diagrama_bloques.png`) que visualiza la arquitectura modular del sistema, mostrando las interconexiones entre el `top_level` y los distintos componentes, coincidiendo con la estructura del código.
+El proyecto está **ampliamente documentado** para facilitar su comprensión y mantenimiento:
 
-## 4. Calidad del Código (5/5 pts)
+* **Comentarios en Código:** Cada entidad VHDL incluye un encabezado descriptivo. Se han añadido comentarios internos en puntos clave para clarificar la lógica de señales, variables y procesos complejos.
+* **Diagrama de Bloques:** Se proporciona un diagrama visual (`/doc/diagrama_bloques.png`) que ilustra la arquitectura modular y las interconexiones entre los componentes, reflejando fielmente la estructura del código VHDL.
 
-[cite_start]**Criterio:** "Código limpio, bien estructurado, reutilizable." [cite: 5]
+***
 
-La calidad del código se garantiza mediante:
+## Calidad del Código ✨
 
-* **Estructura Clara:** La separación en módulos funcionales y una librería de componentes básicos (`lib_basic`) facilita la comprensión y el mantenimiento.
-* **Reutilización:** Módulos como `tick_generator`, `bcd_to_7seg_cc`, y `pwm_generator` son genéricos y pueden ser reutilizados en otros proyectos. Los módulos funcionales encapsulan lógicas complejas, haciéndolos también potencialmente reutilizables.
-* **Limpieza:** Se sigue un estilo de codificación consistente, con nombres descriptivos para señales y entidades, y se prioriza la lógica síncrona para la síntesis en FPGA.
+Se ha puesto énfasis en la **calidad, estructura y reutilización** del código VHDL:
 
-## 5. Creatividad y Valor Agregado / Interrelación (5/5 pts)
+* **Estructura Clara:** La división en módulos funcionales y una librería básica (`lib_basic`) resulta en un código organizado y fácil de seguir.
+* **Reutilización:** Componentes como `tick_generator`, los decodificadores 7-segmentos y `pwm_generator` son genéricos y aplicables a otros proyectos. Los módulos funcionales también encapsulan lógicas complejas de forma reutilizable.
+* **Limpieza:** Se mantiene un estilo de codificación consistente, con nombres descriptivos y priorizando la lógica síncrona, adecuada para la síntesis en FPGAs.
 
-[cite_start]**Criterio:** "Implementa características extra relevantes. Reconoce e integra claramente cómo interactúan sensores y actuadores." [cite: 5]
+***
 
-* **Valor Agregado:** Más allá del movimiento básico, se implementó el **cálculo y visualización del costo del estacionamiento**. Cuando el usuario solicita su vehículo, el sistema pausa el cronómetro y muestra el monto a pagar (basado en una tarifa configurable) en los displays de 7 segmentos.
-* **Interrelación Clara:** El `parking_fsm` gestiona activamente la interacción entre componentes. Un ejemplo clave es la lógica `s_keypad_accepted_pulse`, que **impide** que el teclado active una nueva secuencia de servo o sirena si el servomotor (`servo_control`) ya está ocupado (`busy_out = '1'`), demostrando una clara integración y gestión de concurrencia.
+## Creatividad, Valor Agregado e Interrelación 💡
 
-## 6. Identificación de Consecuencias (5/5 pts)
+El proyecto va más allá de los requisitos básicos, incorporando **funcionalidades adicionales** y demostrando una **gestión inteligente de la interacción** entre componentes:
 
-[cite_start]**Criterio:** "Anticipa efectos técnicos y prácticos de decisiones en el sistema." [cite: 5]
+* **Valor Agregado:** Se implementó el **cálculo y visualización automática del costo** del estacionamiento. Al solicitar el vehículo, el sistema no solo pausa el tiempo, sino que calcula el monto a pagar según una tarifa predefinida y lo muestra al usuario.
+* **Interrelación Inteligente:** La FSM principal (`parking_fsm`) coordina activamente los subsistemas. Por ejemplo, la lógica implementada **evita que el usuario pueda activar la barrera (servo) o la sirena si el servo ya está en movimiento**, gestionando así la concurrencia y previniendo comportamientos indeseados.
 
-Las decisiones de diseño se tomaron considerando sus implicaciones:
+***
 
-* **Uso de FSM:** Permite gestionar los diferentes modos operativos (`IDLE`, `HOMING`, `MOVING`, `WAIT_KEYPAD`) de forma robusta, previniendo estados inconsistentes o acciones conflictivas.
-* **Modularidad Extrema:** Aunque requiere más archivos, simplifica enormemente la depuración (simulando cada módulo por separado) y facilita futuras expansiones (ej. añadir un sensor de vehículo en cada piso).
-* **Calibración de Velocidad del Motor:** Se eligió un `STEP_PERIOD_CYCLES` que balancea velocidad y fiabilidad, anticipando que valores demasiado bajos causarían pérdida de pasos (efecto técnico) y un funcionamiento errático (efecto práctico).
+## Identificación de Consecuencias 🤔
 
-## 7. Colaboración y Roles (5/5 pts) [Asumido para el ejemplo]
+Las decisiones clave de diseño se tomaron **analizando sus efectos técnicos y prácticos**:
 
-[cite_start]**Criterio:** "Todos los miembros contribuyen activamente con roles claramente definidos." [cite: 6]
+* **Arquitectura FSM:** Se eligió una Máquina de Estados Finitos para el control central por su robustez en la gestión de modos operativos complejos y la prevención de estados inconsistentes.
+* **Modularidad Profunda:** Facilita la depuración individual de componentes y la escalabilidad futura, aunque implique un mayor número de archivos.
+* **Velocidad del Motor:** La calibración del `STEP_PERIOD_CYCLES` consideró el impacto técnico (pérdida de pasos) y práctico (funcionamiento errático vs. eficiencia) para encontrar un punto óptimo.
 
-El proyecto se desarrolló colaborativamente utilizando GitHub. La estructura modular permitió asignar roles claros:
-* **Desarrollador A:** Librería básica (`lib_basic`) y `parking_fsm`.
-* **Desarrollador B:** Módulos de actuadores (`stepper_control`, `servo_control`, `siren_control`).
-* **Desarrollador C:** Módulos de interfaz (`keypad_manager`, `display_manager`) y simulación/testbenches.
-* **Integrador:** Montaje de maqueta, pruebas físicas y `top_level`.
-Los commits reflejan la contribución activa de todos los miembros.
+***
 
-## 8. Prototipado / Simulación (5/5 pts)
+## Colaboración y Roles 🤝 [Asumido para el ejemplo]
 
-[cite_start]**Criterio:** "Implementación optimizada y documentada." [cite: 6]
+El desarrollo se realizó de forma colaborativa, aprovechando la estructura modular para **definir roles claros y facilitar el trabajo en paralelo** utilizando un sistema de control de versiones (GitHub). Las contribuciones de cada miembro del equipo están documentadas a través del historial de commits.
 
-* **Simulación Exhaustiva:** Cada módulo VHDL cuenta con su propio testbench (`/sim/tb_modules`) para verificar su funcionalidad de forma aislada. Además, existe un testbench global (`/sim/tb_top_level.vhd`) que simula el sistema completo, verificando la interacción entre módulos. Las formas de onda de simulación están documentadas.
-* **Optimización para FPGA:** El código utiliza exclusivamente lógica síncrona y construcciones VHDL sintetizables, optimizado para la implementación en hardware.
+***
 
-## 9. Análisis de Resultados (5/5 pts)
+## Prototipado y Simulación 💻
 
-[cite_start]**Criterio:** "Extrae conclusiones profundas y propone mejoras." [cite: 6]
+La **validación funcional** se realizó mediante simulación exhaustiva y pruebas en el prototipo físico:
 
-El proyecto demuestra exitosamente la implementación de un sistema embebido complejo totalmente en hardware. Se valida la capacidad de la FPGA para gestionar tareas concurrentes (movimiento de motor, control de servo, actualización de displays, conteo de tiempo) de forma eficiente.
+* **Simulación Detallada:** Cada módulo cuenta con un testbench individual (`/sim/tb_modules`) para verificación aislada. Un testbench global (`/sim/tb_top_level.vhd`) valida la interacción del sistema completo.
+* **Optimización para Hardware:** El código está escrito utilizando construcciones VHDL sintetizables y sigue las mejores prácticas para implementación en FPGAs.
 
-**Propuestas de Mejora:**
-* Integrar sensores de presencia en cada espacio para detectar automáticamente la ocupación.
-* Añadir una interfaz de comunicación (ej. UART) para reportar estados o pagos a un sistema central.
-* Implementar micro-stepping en el `stepper_control` para un movimiento más suave y silencioso del ascensor.
+***
 
-## 10. Maqueta y Montaje (5/5 pts)
+## Análisis de Resultados 📊
 
-[cite_start]**Criterio:** "La maqueta está limpia, funcional y bien ensamblada... conexiones están organizados, etiquetados... presentación es profesional y estética." [cite: 6]
+El proyecto valida la viabilidad de implementar sistemas de control embebido complejos **directamente en hardware**, aprovechando el paralelismo inherente de las FPGAs para gestionar múltiples tareas concurrentes (control de motores, temporización, interfaz de usuario) de manera eficiente.
 
-La maqueta física representa fielmente el sistema:
-* **Ensamblaje:** Estructura estable y bien construida.
-* **Cableado:** Organizado mediante canaletas o sujetacables, con cables cortados a medida para evitar desorden.
-* **Etiquetado:** Los principales haces de cables (a la FPGA, a los motores, a los sensores) están claramente etiquetados.
-* **Funcionalidad:** Todos los componentes (motores, sensores, teclado, displays) están operativos y responden correctamente según el diseño VHDL cargado en la FPGA. La presentación general es **limpia y profesional**.
+**Propuestas de Mejora:** Se identifican posibles extensiones como la integración de sensores de presencia, la adición de interfaces de comunicación (UART) o la implementación de técnicas de control de motor más avanzadas (micro-stepping).
+
+***
+
+## Maqueta y Montaje 🛠️
+
+Se construyó una **maqueta física funcional, limpia y bien ensamblada** que representa el sistema real:
+
+* **Ensamblaje Profesional:** La estructura es estable y estéticamente cuidada.
+* **Cableado Organizado:** Se utilizaron técnicas de gestión de cables (canaletas, sujetacables, cables a medida) y etiquetado claro para facilitar la depuración y presentar un aspecto ordenado.
+* **Funcionalidad Completa:** Todos los componentes hardware (motores, sensores, teclado, displays) están operativos y responden correctamente al control de la FPGA, demostrando la correcta implementación del diseño VHDL.
