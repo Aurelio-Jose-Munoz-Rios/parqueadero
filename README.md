@@ -46,6 +46,11 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 El siguiente esquema muestra la interconexión de todos los componentes descritos:
 <img width="1115" height="681" alt="esquematico" src="https://github.com/user-attachments/assets/19831baa-e15b-4f01-ad3f-60c580e77eb1" />
 
+
+## Diagrama de Asignación de Pines
+
+<img width="5096" height="4036" alt="Diagrama en blanco" src="https://github.com/user-attachments/assets/0e10e844-57c2-4061-8df9-1154e916e31f" />
+
 ---
 
 ## Posibles Extensiones
