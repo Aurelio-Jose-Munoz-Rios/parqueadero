@@ -6,17 +6,6 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 
 ***
 
-## Arquitectura del Sistema 
-
-El diseño se basa en una **arquitectura estrictamente modular**, dividiendo el sistema en componentes lógicos.
-
-* **`top_level.vhd`:** Actúa como la entidad principal, puramente estructural, encargada de instanciar y conectar todos los submódulos.
-* **Módulos Funcionales (`/src`):** Encapsulan tareas completas como la lógica de control principal (`parking_fsm`), el manejo de actuadores (`stepper_control`, `servo_control`, `siren_control`), la interfaz de usuario (`keypad_manager`, `display_manager`) y la gestión del tiempo (`parking_timer`).
-* **Librería Básica (`/src/lib`):** Contiene componentes genéricos y reutilizables (`tick_generator`, decodificadores 7-segmentos, `pwm_generator`, etc.), que forman los bloques de construcción fundamentales.
-
-Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número de espacios o la velocidad del motor implicaría modificar parámetros o módulos específicos sin alterar el resto del sistema.
-
-***
 
 ## Sensores y Actuadores 
 ***
