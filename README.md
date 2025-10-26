@@ -35,8 +35,8 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 - **Protoboard (breadboard)**
 - **Cables Dupont** (macho-macho / macho-hembra)
 
-### Módulos de expansión
-- **Módulos “Breakout” J4 y J5** (expansión de pines para microcontrolador o tarjeta principal)
+### FPGA CYCLON III
+- **Módulos J4 y J5** 
 
 ## Notas
 - Los módulos *J4 y J5* pertenecen a la tarjeta FPGA CYCLON III.
