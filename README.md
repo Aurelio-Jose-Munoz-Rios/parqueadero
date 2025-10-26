@@ -45,7 +45,7 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 ## Diagrama de Conexión
 El siguiente esquema muestra la interconexión de todos los componentes descritos:
 <img width="1115" height="681" alt="esquematico" src="https://github.com/user-attachments/assets/19831baa-e15b-4f01-ad3f-60c580e77eb1" />
-**[diagrama_en_wokwi](https://wokwi.com/projects/445853958211321857)** 
+**[diagrama en wokwi](https://wokwi.com/projects/445853958211321857)** 
 
 ## Diagrama de Asignación de Pines
 
