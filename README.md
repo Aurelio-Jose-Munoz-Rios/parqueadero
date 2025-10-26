@@ -50,7 +50,7 @@ El siguiente esquema muestra la interconexión de todos los componentes descrito
 ## Diagrama de Asignación de Pines
 
 <img width="5096" height="4036" alt="Diagrama en blanco" src="https://github.com/user-attachments/assets/0e10e844-57c2-4061-8df9-1154e916e31f" />
-
+[diagrama_en_wokwi](https://wokwi.com/projects/445853958211321857)
 ---
 
 ## Posibles Extensiones
