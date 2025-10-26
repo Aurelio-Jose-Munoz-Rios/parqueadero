@@ -33,71 +33,14 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
     * **Indicador Visual:** Una **Torre de LEDs (Rojo, Amarillo, Verde)** indica el estado general del sistema. El LED Rojo indica una falla o el estado de *homing*, el Amarillo el movimiento del ascensor o la barrera, y el Verde el estado de reposo (`S_WAIT_KEYPAD`) o disponibilidad.
 
 ***
-## Documentación 
-
-El proyecto está **ampliamente documentado** para facilitar su comprensión y mantenimiento:
-
-* **Comentarios en Código:** Cada entidad VHDL incluye un encabezado descriptivo. Se han añadido comentarios internos en puntos clave para clarificar la lógica de señales, variables y procesos complejos.
-* **Diagrama de Bloques:** Se proporciona un diagrama visual (`/doc/diagrama_bloques.png`) que ilustra la arquitectura modular y las interconexiones entre los componentes, reflejando fielmente la estructura del código VHDL.
-
-***
-
-## Calidad del Código 
-
-Se ha puesto énfasis en la **calidad, estructura y reutilización** del código VHDL:
-
-* **Estructura Clara:** La división en módulos funcionales y una librería básica (`lib_basic`) resulta en un código organizado y fácil de seguir.
-* **Reutilización:** Componentes como `tick_generator`, los decodificadores 7-segmentos y `pwm_generator` son genéricos y aplicables a otros proyectos. Los módulos funcionales también encapsulan lógicas complejas de forma reutilizable.
-* **Limpieza:** Se mantiene un estilo de codificación consistente, con nombres descriptivos y priorizando la lógica síncrona, adecuada para la síntesis en FPGAs.
-
-***
-
-## Creatividad, Valor Agregado e Interrelación 
-
-El proyecto va más allá de los requisitos básicos, incorporando **funcionalidades adicionales** y demostrando una **gestión inteligente de la interacción** entre componentes:
-
-* **Valor Agregado:** Se implementó el **cálculo y visualización automática del costo** del estacionamiento. Al solicitar el vehículo, el sistema no solo pausa el tiempo, sino que calcula el monto a pagar según una tarifa predefinida y lo muestra al usuario.
-* **Interrelación Inteligente:** La FSM principal (`parking_fsm`) coordina activamente los subsistemas. Por ejemplo, la lógica implementada **evita que el usuario pueda activar la barrera (servo) o la sirena si el servo ya está en movimiento**, gestionando así la concurrencia y previniendo comportamientos indeseados.
-
-***
-
-## Identificación de Consecuencias 
-
-Las decisiones clave de diseño se tomaron **analizando sus efectos técnicos y prácticos**:
-
-* **Arquitectura FSM:** Se eligió una Máquina de Estados Finitos para el control central por su robustez en la gestión de modos operativos complejos y la prevención de estados inconsistentes.
-* **Modularidad Profunda:** Facilita la depuración individual de componentes y la escalabilidad futura, aunque implique un mayor número de archivos.
-* **Velocidad del Motor:** La calibración del `STEP_PERIOD_CYCLES` consideró el impacto técnico (pérdida de pasos) y práctico (funcionamiento errático vs. eficiencia) para encontrar un punto óptimo.
-
-***
 
 ## Colaboración y Roles 
 
-El desarrollo se realizó de forma colaborativa, aprovechando la estructura modular para **definir roles claros y facilitar el trabajo en paralelo** utilizando un sistema de control de versiones (GitHub). Las contribuciones de cada miembro del equipo están documentadas a través del historial de commits.
-
-***
-
-## Prototipado y Simulación 
-
-La **validación funcional** se realizó mediante simulación exhaustiva y pruebas en el prototipo físico:
-
-* **Simulación Detallada:** Cada módulo cuenta con un testbench individual (`/sim/tb_modules`) para verificación aislada. Un testbench global (`/sim/tb_top_level.vhd`) valida la interacción del sistema completo.
-* **Optimización para Hardware:** El código está escrito utilizando construcciones VHDL sintetizables y sigue las mejores prácticas para implementación en FPGAs.
-
-***
-
-## Análisis de Resultados 
-
-El proyecto valida la viabilidad de implementar sistemas de control embebido complejos **directamente en hardware**, aprovechando el paralelismo inherente de las FPGAs para gestionar múltiples tareas concurrentes (control de motores, temporización, interfaz de usuario) de manera eficiente.
-
-**Propuestas de Mejora:** Se identifican posibles extensiones como la integración de sensores de presencia, la adición de interfaces de comunicación (UART) o la implementación de técnicas de control de motor más avanzadas (micro-stepping).
-
+Aurelio Muñoz: Project Manager y diseño 3D.
+Kelly Bunay: Desarrollador de Softaware, componentes modulares, estetica, organización y etiquetado de maqueta.
+Brayan Mosquera: Desarrollador de Software, componentes modulares, soldador de headers y medición de cableado.
 ***
 
 ## Maqueta y Montaje 
 
-Se construyó una **maqueta física funcional, limpia y bien ensamblada** que representa el sistema real:
-
-* **Ensamblaje Profesional:** La estructura es estable y estéticamente cuidada.
-* **Cableado Organizado:** Se utilizaron técnicas de gestión de cables (canaletas, sujetacables, cables a medida) y etiquetado claro para facilitar la depuración y presentar un aspecto ordenado.
-* **Funcionalidad Completa:** Todos los componentes hardware (motores, sensores, teclado, displays) están operativos y responden correctamente al control de la FPGA, demostrando la correcta implementación del diseño VHDL.
+Agregar imagenes, diseño 3d en solidworks, videos
