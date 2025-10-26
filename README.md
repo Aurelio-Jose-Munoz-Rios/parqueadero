@@ -6,9 +6,6 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 
 ***
 
-# Proyecto Electrónico - Control con Teclado y Motores
-
-Este proyecto integra varios componentes electrónicos conectados mediante una placa de pruebas (breadboard) y módulos de expansión (breakouts). Incluye control mediante teclado matricial, indicadores LED, sensores y motores.
 
 ## Componentes de Hardware
 
