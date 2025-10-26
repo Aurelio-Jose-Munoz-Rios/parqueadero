@@ -49,22 +49,33 @@ El siguiente esquema muestra la interconexión de todos los componentes descrito
 ---
 
 ## Posibles Extensiones
-- Agregar pantalla LCD o display OLED para mostrar información.
+- Agregar o reducir cabinas al parqueadero, modificaondo unicamente el arreglo que actualmente tiene 6 posiciones.
 - Integrar comunicación serial o por radio (Bluetooth / WiFi).
-- Implementar control mediante microcontrolador programable.
+- Moficar el diseño 3D
+- Aregar otras interfaces (web, mobil)
+- Añadir medios de pagos digitales
+- Integrar otras funcionalidad mediante cross platform
 
 ---
 
-© 2025 — Parqueadero vertical automático con control por teclado, sensores y actuadores.
+© 2025 — Parqueadero vertical automático.
 
 
 ## Colaboración y Roles 
 
-Aurelio Muñoz: Project Manager y diseño 3D.
+Aurelio Muñoz
+Project Manager y Diseñador 3D
+Responsable de la planificación, coordinación general del proyecto y diseño 3D de los componentes estructurales y la maqueta.
 
-Kelly Bunay: Desarrollador de Softaware, componentes modulares, estetica, organización y etiquetado de maqueta.
 
-Brayan Mosquera: Desarrollador de Software, componentes modulares, soldador y conector de cableado.
+Kelly Bunay
+Desarrolladora de Software y Diseño de Sistema
+Encargada del desarrollo del software, integración de componentes modulares, diseño estético, organización y etiquetado de la maqueta.
+
+
+Brayan Mosquera
+Desarrollador de Software e Integración de Hardware
+Responsable del desarrollo del software, ensamblaje de módulos, soldadura y conexión del cableado del sistema.
 ***
 
 ## Maqueta y Montaje 
