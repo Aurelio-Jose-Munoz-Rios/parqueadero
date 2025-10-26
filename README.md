@@ -43,7 +43,7 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 ---
 
 ## Diagrama de Conexión
-El siguiente esquema muestra la interconexión de todos los componentes descritos:
+
 <img width="1014" height="682" alt="imagen" src="https://github.com/user-attachments/assets/b79dd908-4723-46de-b5b7-3f98894f2da5" />
 
 **[diagrama en wokwi](https://wokwi.com/projects/445853958211321857)** 
