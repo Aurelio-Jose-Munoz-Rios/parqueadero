@@ -1,4 +1,4 @@
-# 🚗 Proyecto: Parqueadero Vertical Automatizado en VHDL (Evaluación)
+#Parqueadero Vertical Automatizado en VHDL (Evaluación)
 
 Este documento describe el proyecto de un parqueadero vertical automatizado implementado en VHDL, destacando cómo el diseño cumple con los criterios de excelencia definidos en la rúbrica de evaluación del curso "Diseño de Circuitos Digitales con VHDL".
 
