@@ -63,19 +63,19 @@ El siguiente esquema muestra la interconexión de todos los componentes descrito
 
 ## Colaboración y Roles 
 
-Aurelio Muñoz
+**Aurelio Muñoz**
 
 Project Manager y Diseñador 3D
 Responsable de la planificación, coordinación general del proyecto y diseño 3D de los componentes estructurales y la maqueta.
 
 
-Kelly Bunay
+**Kelly Bunay**
 
 Desarrolladora de Software y Diseño de Sistema
 Encargada del desarrollo del software, integración de componentes modulares, diseño estético, organización y etiquetado de la maqueta.
 
 
-Brayan Mosquera
+**Brayan Mosquera**
 
 Desarrollador de Software e Integración de Hardware
 Responsable del desarrollo del software, ensamblaje de módulos, soldadura y conexión del cableado del sistema.
