@@ -19,15 +19,20 @@ Esta separación promueve la **escalabilidad**; por ejemplo, ajustar el número 
 ***
 
 ## Gestión de Sensores y Actuadores 
+***
+* **Sensores:**
+    * **Referencia Posicional (Homing):** Se utiliza un **Sensor Tracker seguidor de línea** en la base del sistema. Su señal digital se procesa mediante un acondicionador (`button_conditioner`) para generar un pulso limpio que indica al `parking_fsm` que se ha alcanzado la posición "Piso 0", deteniendo el motor (`stepper_control`) con precisión.
+    * **Monederos:** Se utiliza un sensor **HTC5000 IR** para detectar la inserción de monedas. La señal de este sensor también se acondiciona para interactuar con la FSM principal y gestionar el pago.
+    * **Botón de Inicio/Inicialización:** Un pulsador estándar cuya señal es acondicionada (`button_conditioner`) para generar el pulso `start_btn_tick`, iniciando la secuencia de *homing* en la FSM.
+    * **Botón de Emergencia (Reset):** Conectado a la entrada `boton_reset`, proporciona un reset asíncrono a todos los módulos, deteniendo actuadores y devolviendo la FSM al estado inicial (`S_IDLE`) de forma inmediata.
 
-La integración y **calibración precisa** de sensores y actuadores garantizan un funcionamiento fiable y exacto:
-
-* **Sensor de Homing:** Se utiliza un acondicionador de señal (`button_conditioner`) para asegurar una detección limpia del "Piso 0", permitiendo al `stepper_control` detenerse en la posición correcta.
-* **Motor a Pasos:** El control se realiza mediante comandos claros (`enable`, `dir`) desde la FSM principal. La velocidad de operación (`STEP_PERIOD_CYCLES`) ha sido **calibrada experimentalmente** para optimizar el balance entre rapidez y fiabilidad, asegurando el posicionamiento exacto en cada nivel.
-* **Servomotor:** El `servo_control` implementa una secuencia temporizada precisa para la apertura y cierre de la barrera, utilizando un `pwm_generator` para alcanzar los ángulos correctos (0° y 90°) de forma consistente.
+* **Actuadores:**
+    * **Movimiento Vertical:** Un **Motor Paso a Paso NEMA 17**, controlado por un driver **A4988**, es el responsable del movimiento del ascensor. El módulo `stepper_control` recibe comandos simples (`enable`, `dir`) del `parking_fsm` y genera la secuencia de pulsos `step` necesaria. La velocidad (`STEP_PERIOD_CYCLES`) se ha calibrado para un equilibrio óptimo entre rapidez y fiabilidad, evitando la pérdida de pasos.
+    * **Barrera de Acceso:** Un **Servomotor** estándar controla la apertura y cierre de la puerta. El módulo `servo_control`, a través de su submódulo `pwm_generator`, genera la señal PWM precisa para mover el servo a las posiciones calibradas (ej., 0° y 90°) durante la secuencia temporizada.
+    * **Indicador Acústico:** Una **Sirena de 12V** (manejada a través de una interfaz de potencia adecuada, como un relé o transistor) es activada por el módulo `siren_control` para proporcionar retroalimentación al usuario.
+    * **Indicador Visual:** Una **Torre de LEDs (Rojo, Amarillo, Verde)** indica el estado general del sistema. El LED Rojo indica una falla o el estado de *homing*, el Amarillo el movimiento del ascensor o la barrera, y el Verde el estado de reposo (`S_WAIT_KEYPAD`) o disponibilidad.
 
 ***
-
 ## Documentación 
 
 El proyecto está **ampliamente documentado** para facilitar su comprensión y mantenimiento:
