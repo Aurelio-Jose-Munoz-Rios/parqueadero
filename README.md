@@ -50,7 +50,8 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 
 ## Diagrama de Asignación de Pines
 
-<img width="5096" height="4036" alt="Diagrama en blanco" src="https://github.com/user-attachments/assets/0e10e844-57c2-4061-8df9-1154e916e31f" />
+<img width="5096" height="4249" alt="Diagrama en blanco(2)" src="https://github.com/user-attachments/assets/f748c9d6-81e5-4dd2-9e6f-af669cc3910a" />
+
 
 ---
 
