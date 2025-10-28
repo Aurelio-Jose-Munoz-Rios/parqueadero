@@ -94,4 +94,4 @@ Responsable del desarrollo del software, ensamblaje de módulos, soldadura y con
 
 ![maqueta](https://github.com/user-attachments/assets/9114f3fb-5228-4be3-81fd-ea9000968c2e)
 
-[![Mira el video]([https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg](https://www.youtube.com/shorts/kxcQuZXT7NA))]([https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/shorts/kxcQuZXT7NA))
+[![Mira el video]((https://www.youtube.com/shorts/kxcQuZXT7NA)]([https://www.youtube.com/watch?v=dQw4w9WgXcQ](https://www.youtube.com/shorts/kxcQuZXT7NA)
