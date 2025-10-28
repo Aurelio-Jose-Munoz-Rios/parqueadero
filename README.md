@@ -30,7 +30,7 @@ Este proyecto presenta el diseño e implementación de un sistema de parqueadero
 - **2 Sensores infrarrojos TCRT5000 IR**
 
 ### 🔌 Alimentación y conexión
-- **Fuente de alimentación de 9 V** (para el motor paso a paso)
+- **Fuente de alimentación de 12 V** (para el motor paso a paso)
 - **Alimentación de 5 V** (para lógica y sensores)
 - **Protoboard (breadboard)**
 - **Cables Dupont** (macho-macho / macho-hembra)
