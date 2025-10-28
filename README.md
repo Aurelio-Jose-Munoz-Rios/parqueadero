@@ -89,5 +89,6 @@ Responsable del desarrollo del software, ensamblaje de módulos, soldadura y con
 ***
 
 ## Maqueta y Montaje 
+<img width="900" height="720" alt="renderizado_final_Elegancia" src="https://github.com/user-attachments/assets/342a8569-a88d-4982-8631-be0fc817f61d" />
 
-Agregar imagenes, diseño 3d en solidworks, videos
+
